@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         LOGGER.info("Start program!");
 
-        Thread a = new Thread( new WriteThread());
+        Thread a = new Thread(new WriteThread());
         Thread b = new Thread(new SquareThread());
         Thread c = new Thread(new SumThread());
 

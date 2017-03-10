@@ -12,10 +12,6 @@ public class Main {
     public static void main(String[] args) {
         LOGGER.info("Start program!");
 
-        Thread a = new Thread(new WriteThread());
-        Thread b = new Thread(new SquareThread());
-        Thread c = new Thread(new SumThread());
-
         ExecutorService executor = Executors.newFixedThreadPool(3);
         executor.submit(new WriteThread());
         executor.submit(new SquareThread());

@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 
 public class Main {
     private static final Logger LOGGER = LogManager.getLogger();
+
     public static void main(String[] args) {
         LOGGER.info("Start program!");
 

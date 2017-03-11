@@ -12,6 +12,9 @@
                 </pattern>>
             </PatternLayout>
         </Console>
+        <Async name="async" bufferSize="1000" includeLocation="true">
+            <AppenderRef ref="Console-Appender" />
+        </Async>
         <File name="File-Appender" fileName="${log-path}/xmlfilelog.log" >
             <PatternLayout>
                 <pattern>
@@ -34,7 +37,7 @@
         <Logger name="com.epam.data" level="debug" additivity="false">
             <AppenderRef ref="File-Appender" level="error"/>
             <AppenderRef ref="RollingFile-Appender" level="debug"/>
-            <AppenderRef ref="Console-Appender" level="info"/>
+            <AppenderRef ref="async"/>
         </Logger>
         <Root level="debug">
             <AppenderRef ref="Console-Appender"/>

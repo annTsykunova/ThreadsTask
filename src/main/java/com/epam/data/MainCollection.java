@@ -3,14 +3,13 @@ package com.epam.data;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MainCollection {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger(MainCollection.class);
 
     private static MainCollection instance;
     private static CopyOnWriteArrayList<Integer> listOfData;
@@ -39,10 +38,9 @@ public class MainCollection {
     }
 
     public void writeToCollection() {
-        Random random = new Random();
-        int number = random.nextInt(1000);
-        listOfData.add(number);
-        LOGGER.info("Add element to the list: " + number);
+        int random = (int) (Math.random() * 10);
+        listOfData.add(random);
+        LOGGER.debug("Add element to the list: " + random);
     }
 
     public double getSquareRoot() {
@@ -63,9 +61,9 @@ public class MainCollection {
 
     public void showCollection() {
         LOGGER.debug("Items of collection");
-        for (Integer item : listOfData) {
-            LOGGER.debug(item);
-        }
+        LOGGER.debug(listOfData.toString());
+
     }
+
 
 }

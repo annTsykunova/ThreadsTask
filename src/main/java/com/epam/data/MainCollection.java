@@ -52,12 +52,6 @@ public class MainCollection {
 
     }
 
-//    public void removeFromCollection() {
-//        int random = (int) (Math.random() * 10);
-//        listOfData.remove(listOfData.size()-1);
-//        LOGGER.debug("Remove element from the list: " + random);
-//    }
-
     public void getSquareRoot() {
         int sum = 0;
         try {
